@@ -1,0 +1,357 @@
+:root {
+  --orange: rgb(255, 128, 0);
+  --dark-grey: rgb(36, 36, 36);
+  --dark-orange: rgb(255, 64, 0);
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  margin: 0;
+}
+#top-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-grey);
+  color: white;
+}
+#phone {
+  padding: 0 10px;
+}
+#phone > i {
+  color: var(--orange);
+  background-color: white;
+  padding: 5px;
+  margin-right: 5px;
+}
+#phone > i:hover,
+#socials > li:hover {
+  color: black;
+}
+#socials {
+  list-style-type: none;
+}
+#socials > li {
+  float: left;
+  padding: 5px;
+  color: var(--orange);
+  background-color: white;
+  margin-right: 0.5em;
+  cursor: pointer;
+}
+/* Navigation */
+#navigation {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#logo {
+  color: var(--orange);
+  padding: 1rem 1.5rem;
+  border-radius: 5%;
+  font-weight: 900;
+}
+#logo > span {
+  color: black;
+  text-transform: uppercase;
+}
+#navigation {
+  background-color: rgb(240, 240, 240);
+  box-shadow: 0 4px 0 0 rgba(0,0,0,0.2);
+  z-index: 1;
+}
+#toggle-menu {
+  display: none;
+}
+#menu-close {
+  display: none;
+}
+#menu > a {
+  text-decoration: none;
+  color: black;
+  margin: 1rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 10px;
+}
+#dropdown {
+  position: relative;
+}
+#menu > a:hover {
+  color: white;
+  background-color: black;
+}
+#sub-menu {
+  display: none;
+  position: absolute;
+  list-style-type: none;
+  background-color: white;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.5);
+  padding: 0 1rem;
+  right: 13%;
+}
+#sub-menu > li > a{
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  border-radius: 10px;
+}
+#sub-menu > li > a:hover {
+  background-color: black;
+  color: white;
+}
+#sub-menu > li > #dropdown {
+  display: none;
+}
+/* Showcase */
+#showcase {
+  position: static;
+}
+.slides {
+  position: relative;
+  display: none;
+}
+.slides > img {
+  width: 100%;
+  height: 100vh;
+}
+.text {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  padding: 0;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  background-color: rgba(0,0,0,0.4);
+}
+.text > h2 {
+  text-align: center;
+  margin-top: 20%;
+}
+.text > p {
+  width: 70%;
+  text-align: center;
+  margin: 0 auto;
+}
+.text > .button {
+  display: block;
+  margin: 2rem auto;
+  width: 20%;
+  text-align: center;
+}
+.button {
+  text-decoration: none;
+  background-color: var(--orange);
+  padding: 1rem 2rem;
+  color: white;
+  font-weight: 400;
+}
+.button:hover {
+  background-color: var(--dark-orange);
+}
+.plus {
+  position: absolute;
+  top: 60%;
+  right: 0;
+  padding: 3rem 1rem;
+  background-color: var(--orange);
+  opacity: 0.4;
+  font-size: 2rem;
+  color: white;
+}
+.plus:hover {
+  cursor: pointer;
+  background-color: var(--dark-orange);
+  opacity: 1;
+}
+.minus{
+  position: absolute;
+  top: 60%;
+  left: 0;
+  padding: 3rem 1rem;
+  background-color: var(--orange);
+  opacity: 0.4;
+  font-size: 2rem;
+  color: white;
+}
+.minus:hover{
+  cursor: pointer;
+  background-color: var(--dark-orange);
+  opacity: 1;
+}
+/* Prices */
+#prices {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#prices > .card {
+  width: 30%;
+  text-align: center;
+  padding: 5px 10px 20px 10px;
+  opacity: 0.9;
+}
+#prices > .card:hover {
+  opacity: 1;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+}
+#prices > .card > img {
+  width: 100%;
+  border-radius: 10px;
+}
+#prices > .card > p {
+  padding: 0 10%;
+}
+#prices > .card > .price {
+  color: var(--dark-orange);
+  padding: 1rem 0;
+}
+
+#services {
+  background-color: rgb(240, 240, 240);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 1rem 0;
+}
+#services > .card-item {
+  width: 28%;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: white;
+}
+#services > .card-item > i:hover {
+  color: var(--orange);
+}
+/* Testimonial */
+#testimonials {
+  position: relative;
+}
+#testimonials > .testimonial-item {
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+#testimonials > .testimonial-item:hover {
+  color: var(--orange);
+}
+#testimonials > .testimonial-item > img {
+  width: 20%;
+}
+#testimonials > .testimonial-item > p {
+  width: 30%;
+  display: inline-block;
+}
+#testimonials > .prev,
+#testimonials > .next {
+  font-weight: 700;
+  color: white;
+  background-color: var(--orange);
+  padding: 3rem 1rem;
+  cursor: pointer;
+  opacity: 0.7;
+}
+#testimonials > .prev:hover,
+#testimonials > .next:hover {
+  opacity: 1;
+}
+#testimonials > .prev {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+}
+#testimonials > .next {
+  position: absolute;
+  top: 40%;
+  right: 20%;
+}
+#testimonials > .map {
+  text-align: center;
+}
+#testimonials > .map > .line {
+  display: inline-block;
+  background-color: var(--dark-grey);
+  height: 10px;
+  width: 25px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+#testimonials > .map > .line:hover {
+  background-color: var(--orange);
+}
+/* Footer */
+footer {
+  background-color: var(--dark-grey);
+  margin-top: 3rem;
+}
+footer > div {
+  color: white;
+  padding: 3rem;
+}
+footer > div > p:hover {
+  color: var(--orange);
+}
+footer > p {
+  text-align: center;
+  padding: 0 3rem 3rem;
+  color: white;
+}
+
+/* Modal */
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: none;
+}
+#modal > h2 {
+  color: white;
+  text-align: center;
+  margin-top: 6rem;
+}
+#modal > i {
+  color: white;
+  cursor: pointer;
+  margin-top: 3rem;
+  position: absolute;
+  right: 2rem;
+}
+#modal > i:hover {
+  color: var(--orange);
+}
+#modal > form {
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+  padding: 4rem;
+  text-align: center;
+}
+#modal > form > label {
+  display: block;
+  text-align: left;
+}
+#modal > form > input,
+#modal > form > select {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+#modal > form > input[type='submit']{
+  border: none;
+  font-size: 1.2rem;
+}

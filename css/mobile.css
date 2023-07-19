@@ -1,0 +1,67 @@
+#menu >a {
+  margin: 0;
+}
+@media screen and (max-width: 600px){
+  #menu {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    background-color: var(--dark-grey);
+    width: 100%;
+    top: 0;
+    display: none;
+  }
+  #menu-close {
+    display: block;
+    color: white;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    padding: 1.5rem;
+  }
+  #menu-close:hover {
+    background-color: black;
+  }
+  #menu > a {
+    color: white;
+  }
+  #sub-menu {
+    display: none;
+    position: relative;
+    right: 0;
+    padding: 0;
+    margin-left: 1rem;
+  }
+  #sub-menu > li > a {
+    width: 100%;
+  }
+  #sub-menu > li > a:hover {
+    background-color: var(--dark-grey);
+    border-radius: 0;
+  }
+  #toggle-menu {
+    display: block;
+    margin-right: 2rem;
+    font-size: 150%;
+    cursor: pointer;
+  }
+  #showcase > .slides > img {
+    height: auto;
+  }
+  #prices {
+    flex-direction: column;
+    margin: 1rem auto;
+  }
+  #prices > .card {
+    width: 80%;
+    margin: 0.5rem auto;
+  }
+  #services {
+    flex-direction: column;
+    justify-content: center;
+  }
+  #services > .card-item {
+    width: 100%;
+    padding: 1rem 3rem;
+  }
+}
