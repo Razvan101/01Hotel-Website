@@ -48,6 +48,10 @@
   #showcase > .slides > img {
     height: auto;
   }
+  #showcase > .plus, 
+  #showcase > .minus{
+    top: 35%;
+  }
   #prices {
     flex-direction: column;
     margin: 1rem auto;
@@ -64,4 +68,15 @@
     width: 100%;
     padding: 1rem 3rem;
   }
+  #testimonials > .testimonial-item > img,
+  #testimonials > .testimonial-item > p {
+    width: 50%;
+  }
+  #testimonials > .prev {
+    left: 0;
+  }
+  #testimonials > .next {
+    right: 0;
+  }
+  
 }

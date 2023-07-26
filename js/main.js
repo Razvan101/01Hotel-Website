@@ -2,11 +2,20 @@ let toggleEl = document.getElementById('toggle-menu');
 let closeEl = document.getElementById('menu-close');
 let dropdownBtn = document.getElementById('dropdown');
 let dropdownCont = document.getElementById('sub-menu');
+let bookEl = document.querySelectorAll('.button');
+let formClose = document.getElementById('modal-close');
+let modalEl = document.getElementById('modal');
+let formEl = document.getElementById('form-submit');
 
 toggleEl.addEventListener('click', showMenu);
 closeEl.addEventListener('click', closeMenu);
 dropdownBtn.addEventListener('mouseover', dropdown);
 dropdownCont.addEventListener('mouseleave', dropdownOut);
+formClose.addEventListener('click', modalClose);
+for(let i = 0; i < bookEl.length; i++){
+  bookEl[i].addEventListener('click', modal);
+}
+formEl.addEventListener('click', formValidation);
 
 
 function showMenu (){
@@ -111,3 +120,75 @@ function currentSlide(){
 }
 
 currentSlide();
+
+function modal(e){
+  e.preventDefault();
+  modalEl.style.display = 'block';
+}
+
+function modalClose(){
+  modalEl.style.display = 'none';
+}
+
+function formValidation (e){
+  e.preventDefault();
+  let validate = true;
+  let roomEl = document.getElementById('room-type').value;
+  let firstDayEl = document.getElementById('first-day').value;
+  let lastDayEl = document.getElementById('last-day').value;
+  let nameEl = document.getElementById('name').value.trim();
+  let emailEl = document.getElementById('email').value.trim();
+  let phoneEl = document.getElementById('phone-number').value.trim();
+  let errorMsg = document.getElementsByClassName('error');
+  let emailValidationRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  let firstDay = Number(new Date(firstDayEl));
+  let lastDay = Number(new Date(lastDayEl));
+
+
+  if (firstDay > lastDay){
+    alert('The last day cannot be before the first one!');
+  }
+
+  if (!firstDayEl){
+    errorMsg[0].style.display = 'block';
+  } else {
+    errorMsg[0].style.display = 'none';
+  }
+  if (!lastDayEl){
+    errorMsg[1].style.display = 'block';
+  } else {
+    errorMsg[1].style.display = 'none';
+  }
+  if (nameEl == ''){
+    errorMsg[2].style.display = 'block';
+  } else {
+    errorMsg[2].style.display = 'none';
+  }
+  if (emailEl == '' || !emailEl.match(emailValidationRegex) ){
+    errorMsg[3].style.display = 'block';
+  } else {
+    errorMsg[3].style.display = 'none';
+  }
+  if (!phoneEl || isNaN(phoneEl) || phoneEl.length != 10){
+    errorMsg[4].style.display = 'block';
+  } else {
+    errorMsg[4].style.display = 'none';
+  }
+
+  if (!firstDayEl || !lastDayEl || nameEl =='' || emailEl == '' || !emailEl.match(emailValidationRegex) || !phoneEl || isNaN(phoneEl) || phoneEl.length != 10){
+    validate = false;
+    return validate;
+  }
+
+  if(validate = true){
+    const p = document.createElement('p');
+    let output = `The room you want is ${roomEl} from the date ${firstDayEl} up to ${lastDayEl}. We will contact you via your phone ${phoneEl} or via email ${emailEl}. Have a great day!`;
+    let formEl = document.querySelector('form');
+    let modalEl = document.getElementById('modal');
+
+    modalEl.appendChild(p);
+    p.innerHTML = output;
+    p.className = 'success';
+    formEl.style.display = 'none';
+  }
+}
